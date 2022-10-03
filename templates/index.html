@@ -1,0 +1,15 @@
+<html>
+   <head>
+      <title>Intake server endpoints</title>
+   </head>
+   <body>
+     <h2>Intake server endpoints:</h2>
+     <a href="v1/info">Info Page</a>
+     <p>Catalog sources:</p>
+     <ul>
+       {% for source in sources %}
+         <li><a href="v1/source?name={{ source }}">{{ source }}</a></li>
+       {% end %}
+     </ul>
+   </body>
+ </html>

@@ -1,0 +1,20 @@
+package:
+  version: '0.1.0'
+  name: 'data-model-precip'
+
+build:
+  number: 0
+  noarch: generic
+
+requirements:
+  run:
+    - intake
+  build: []
+
+about:
+  description: Modelled precipitation under different emissions scenarios.
+  license: MIT
+  license_family: MIT
+  summary: |
+    Subsets of the Maurer, et al. (2007) bias corrected,
+    spatially downscaled monthly climate predictions.

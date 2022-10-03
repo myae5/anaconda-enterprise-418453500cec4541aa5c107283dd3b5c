@@ -1,0 +1,39 @@
+sources:
+  southern_rockies:
+    args:
+      csv_kwargs:
+        names:
+          - time
+          - precip
+        parse_dates:
+          - time
+        skiprows: 3
+      urlpath: '{{ CATALOG_DIR }}/data/SRLCC_{emissions}_Precip_{model}.csv'
+    description: |
+      These data sets are subsets of the Maurer, et al. (2007) bias corrected,
+      spatially downscaled monthly climate predictions. The CSV files here
+      cover three emissions scenarios b1 (low emissions and rate of change),
+      a1b (middle) and a2 (high). Emission scenarios are possibilities for
+      how the future will unfold in terms of greenhouse gas emissions, land
+      use and other environmental factors.
+    driver: csv
+    metadata:
+      origin: https://www.sciencebase.gov/catalog/item/511e740de4b071e86a19a524
+      plots:
+        violin_example:
+          kind: violin
+          y: precip
+          by: ['emissions', 'model']
+          rot: 90
+          height: 400
+        line_example:
+          kind: line
+          x: time
+          y: precip
+          by: ['emissions', 'model']
+          legend: top_right
+        kde_example:
+          kind: kde
+          y: precip
+          by: emissions
+          legend: top_right
